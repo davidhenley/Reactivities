@@ -31,10 +31,7 @@ namespace API
 
             services.AddCors(o =>
             {
-                o.AddPolicy(CorsPolicy, p =>
-                {
-                    p.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
-                });
+                o.AddPolicy(CorsPolicy, p => { p.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin(); });
             });
             
             services.AddControllers();
@@ -48,7 +45,7 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+//            app.UseHttpsRedirection();
 
             app.UseCors(CorsPolicy);
 

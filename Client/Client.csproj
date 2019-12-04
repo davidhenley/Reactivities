@@ -16,8 +16,29 @@
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="ClientApp\public\assets\categoryImages\culture.jpg" />
+        <Content Include="ClientApp\public\assets\categoryImages\drinks.jpg" />
+        <Content Include="ClientApp\public\assets\categoryImages\film.jpg" />
+        <Content Include="ClientApp\public\assets\categoryImages\food.jpg" />
+        <Content Include="ClientApp\public\assets\categoryImages\music.jpg" />
+        <Content Include="ClientApp\public\assets\categoryImages\travel.jpg" />
+        <Content Include="ClientApp\public\assets\logo.png" />
+        <Content Include="ClientApp\public\assets\placeholder.png" />
+        <Content Include="ClientApp\public\assets\user.png" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+        <None Include="ClientApp\src\app\layouts\App.tsx" />
+        <None Include="ClientApp\src\app\layouts\index.scss" />
+        <None Include="ClientApp\src\app\models\activity.ts" />
+        <None Include="ClientApp\src\features\activities\dashboard\ActivityDashboard.tsx" />
+        <None Include="ClientApp\src\features\activities\dashboard\ActivityList.tsx" />
+        <None Include="ClientApp\src\features\activities\details\ActivityDetails.tsx" />
+        <None Include="ClientApp\src\features\nav\NavBar.tsx" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
