@@ -1,3 +1,5 @@
+using Application.Activities;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +26,8 @@ namespace API
         {
             services.AddDbContext<DataContext>(o =>
                 o.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddMediatR(typeof(List).Assembly);
 
             services.AddCors(o =>
             {
